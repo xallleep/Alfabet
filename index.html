@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Casinos Online - Os Melhores Cassinos do Brasil</title>
+    <meta name="description" content="Encontre os melhores cassinos online do Brasil com bônus exclusivos, avaliações detalhadas e promoções imperdíveis.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0f1a2a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #0f1a2a, #1a2d4a);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(15, 26, 42, 0.9), rgba(15, 26, 42, 0.95)), url('https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #e0e0e0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #0f1a2a;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #ffd84d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffcc00;
+            border: 2px solid #ffcc00;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 204, 0, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 32px;
+            color: #ffcc00;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .casinos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .casino-card {
+            background-color: #1a2d4a;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .casino-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .casino-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #ff3366;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .casino-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #2a3f5f;
+        }
+        
+        .casino-content {
+            padding: 20px;
+        }
+        
+        .casino-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+        
+        .casino-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .stars {
+            color: #ffcc00;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        .rating-value {
+            font-weight: 700;
+        }
+        
+        .casino-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .casino-features li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        
+        .casino-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+        }
+        
+        .bonus {
+            background-color: #2a3f5f;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+            color: #ffcc00;
+        }
+        
+        .btn-small {
+            padding: 8px 20px;
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: #0a1421;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            color: #8a9bb2;
+            font-size: 14px;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+        
+        .rating-system {
+            background-color: #1a2d4a;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .rating-system h3 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .rating-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .criterion {
+            text-align: center;
+        }
+        
+        .criterion-name {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .criterion-bar {
+            height: 8px;
+            background-color: #2a3f5f;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .criterion-fill {
+            height: 100%;
+            background-color: #ffcc00;
+        }
+        
+        .criterion-value {
+            font-size: 14px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background-color: #1a2d4a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        
+        .feature-desc {
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+        
+        .warning {
+            background-color: #2a1a1a;
+            border-left: 4px solid #ff3366;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning h4 {
+            color: #ff6666;
+            margin-bottom: 10px;
+        }
+        
+        .warning p {
+            font-size: 14px;
+            color: #e0e0e0;
+        }
+        
+        .image-placeholder {
+            background: linear-gradient(135deg, #2a3f5f, #1a2d4a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 18px;
+            height: 100%;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .casinos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .rating-criteria {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Top<span>Casinos</span></a>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#casinos">Casinos</a></li>
+                        <li><a href="#bonus">Bônus</a></li>
+                        <li><a href="#avaliacoes">Avaliações</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Os Melhores Casinos Online do Brasil</h1>
+            <p>Encontre as plataformas de apostas mais confiáveis com os maiores bônus e avaliações imparciais de especialistas. Jogue com segurança e responsabilidade.</p>
+            <a href="#casinos" class="btn">Ver Casinos Recomendados</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="rating-system">
+            <h3>Como Avaliamos os Casinos</h3>
+            <div class="rating-criteria">
+                <div class="criterion">
+                    <div class="criterion-name">Bônus de Boas-Vindas</div>
+                    <div class="criterion-bar">
+                        <div class="criterion-fill" style="width: 95%"></div>
+                    </div>
+                    <div class="criterion-value">9.5/10</div>
+                </div>
+                <div class="criterion">
+                    <div class="criterion-name">Variedade de Jogos</div>
+                    <div class="criterion-bar">
+                        <div class="criterion-fill" style="width: 90%"></div>
+                    </div>
+                    <div class="criterion-value">9.0/10</div>
+                </div>
+                <div class="criterion">
+                    <div class="criterion-name">Segurança</div>
+                    <div class="criterion-bar">
+                        <div class="criterion-fill" style="width: 98%"></div>
+                    </div>
+                    <div class="criterion-value">9.8/10</div>
+                </div>
+                <div class="criterion">
+                    <div class="criterion-name">Atendimento</div>
+                    <div class="criterion-bar">
+                        <div class="criterion-fill" style="width: 88%"></div>
+                    </div>
+                    <div class="criterion-value">8.8/10</div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎰</div>
+                <h3 class="feature-title">+1000 Jogos</h3>
+                <p class="feature-desc">Diversos cassinos com milhares de jogos, desde slots até jogos de mesa e cassino ao vivo.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">Bônus Exclusivos</h3>
+                <p class="feature-desc">Bônus de boas-vindas, rodadas grátis e promoções semanais para maximizar seus ganhos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Total Segurança</h3>
+                <p class="feature-desc">Cassinos licenciados e regulados com criptografia de ponta para proteger seus dados.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Jogue em Qualquer Lugar</h3>
+                <p class="feature-desc">Plataformas otimizadas para dispositivos móveis para jogar quando e onde quiser.</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" id="casinos">Casinos em Destaque</h2>
+        <p class="section-subtitle">Nossos especialistas analisaram e selecionaram os melhores cassinos online para jogadores brasileiros</p>
+        
+        <div class="casinos-grid">
+            <!-- Casino 1 -->
+            <div class="casino-card">
+                <div class="casino-badge">TOP ESCOLHA</div>
+                <img src="https://imgs.search.brave.com/Gd2Kvccp1G9CIXMHquT95byySTfTuVg2Revaw-jALng/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81Njd3/aW5iZXQuY29tLmJy/LzU2N3dpbi5wbmc" alt="567win Casino" class="casino-img">
+                <div class="casino-content">
+                    <h3 class="casino-title">567win</h3>
+                    <div class="casino-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-value">9.8/10</div>
+                    </div>
+                    <div class="bonus">Bônus de até R$ 2999 para novos membros</div>
+                    <ul class="casino-features">
+                        <li>Mais de 1000 jogos disponíveis</li>
+                        <li>App móvel otimizado</li>
+                        <li>Suporte 24/7 em português</li>
+                        <li>Depósito rápido via PIX</li>
+                    </ul>
+                    <a href="https://www.567win222.com/?dl=5ay002" class="btn btn-small" target="_blank">Acessar Casino</a>
+                </div>
+            </div>
+            
+            <!-- Casino 2 -->
+            <div class="casino-card">
+                <div class="casino-badge">BÔNUS ALTO</div>
+                <img src="https://imgs.search.brave.com/CM54LcOUcDNZdQr-HlGR2QMnce53blMeaF-BgAsmM20/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yNjV4/LmNvbS9waWN0dXJl/cy9sb2dvLzY1eC5q/cGc" alt="65x Casino" class="casino-img">
+                <div class="casino-content">
+                    <h3 class="casino-title">65x</h3>
+                    <div class="casino-rating">
+                        <div class="stars">★★★★☆</div>
+                        <div class="rating-value">9.2/10</div>
+                    </div>
+                    <div class="bonus">Bônus de depósitos incríveis</div>
+                    <ul class="casino-features">
+                        <li>Cassino ao vivo disponível</li>
+                        <li>Promoções semanais</li>
+                        <li>Saques em até 24h</li>
+                        <li>Programa de fidelidade</li>
+                    </ul>
+                    <a href="https://65x.biz/?a=aavinyk2" class="btn btn-small" target="_blank">Acessar Casino</a>
+                </div>
+            </div>
+            
+            <!-- Casino 3 -->
+            <div class="casino-card">
+                <div class="casino-badge">MAIS JOGOS</div>
+                <img src="https://imgs.search.brave.com/jsHPaCdiG_xIHuwtir-zV3jPwzrc7t_Wz2BlYlgeCFE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGctMjU4YmV0LmNv/bS8yNThiZXQucG5n" alt="258bet Casino" class="casino-img">
+                <div class="casino-content">
+                    <h3 class="casino-title">258bet</h3>
+                    <div class="casino-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-value">9.5/10</div>
+                    </div>
+                    <div class="bonus">Bônus de 150% até R$ 1500</div>
+                    <ul class="casino-features">
+                        <li>Mais de 5000 jogos</li>
+                        <li>Bônus para depósitos múltiplos</li>
+                        <li>Transmissões ao vivo</li>
+                        <li>Aceita criptomoedas</li>
+                    </ul>
+                    <a href="https://258bet.in/?a=y6zgy9aw" class="btn btn-small" target="_blank">Acessar Casino</a>
+                </div>
+            </div>
+            
+            <!-- Casino 4 -->
+            <div class="casino-card">
+                <div class="casino-badge">FÁCIL USO</div>
+                <img src="https://imgs.search.brave.com/hSqF-Bumz82568zEvz4EjwhlwHhCkKeVrFlERNwFbgI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXAt/NDU2YmV0LmNvbS9z/dGF0aWMvcGljdHVy/ZS9iYWNrZ3JvdW5k/LnBuZw" alt="456bet Casino" class="casino-img">
+                <div class="casino-content">
+                    <h3 class="casino-title">456bet</h3>
+                    <div class="casino-rating">
+                        <div class="stars">★★★★☆</div>
+                        <div class="rating-value">9.0/10</div>
+                    </div>
+                    <div class="bonus">Bônus de até R$ 19.555 no primeiro depósito</div>
+                    <ul class="casino-features">
+                        <li>Design intuitivo</li>
+                        <li>Jogos exclusivos</li>
+                        <li>Cashout disponível</li>
+                        <li>Promoções especiais</li>
+                    </ul>
+                    <a href="https://dd456bet.com/?id=368231799" class="btn btn-small" target="_blank">Acessar Casino</a>
+                </div>
+            </div>
+            
+            <!-- Casino 5 -->
+            <div class="casino-card">
+                <div class="casino-badge">SEGURANÇA</div>
+                <img src="https://imgs.search.brave.com/2OHIPt7nZ8xghv-VnTWA5k-9bei7iCM_XjZJG5oNrfk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly84OWJl/dC5tZS9pbWFnZXMv/bG9nby84OWJldC5q/cGc" alt="89bet Casino" class="casino-img">
+                <div class="casino-content">
+                    <h3 class="casino-title">89bet</h3>
+                    <div class="casino-rating">
+                        <div class="stars">★★★★☆</div>
+                        <div class="rating-value">8.9/10</div>
+                    </div>
+                    <div class="bonus">Cashback de 30% e até 20% de bônus no deposito</div>
+                    <ul class="casino-features">
+                        <li>Mercado de apostas</li>
+                        <li>Cassino ao vivo premium</li>
+                        <li>App premiado</li>
+                        <li>Segurança máxima</li>
+                    </ul>
+                    <a href="https://89b77.com/?a=x88kv5g3" class="btn btn-small" target="_blank">Acessar Casino</a>
+                </div>
+            </div>
+            
+            <!-- Casino 6 -->
+            <div class="casino-card">
+                <div class="casino-badge">MOBILE</div>
+                <img src="https://imgs.search.brave.com/hNrNLMTsMFAz5hIIV4OTTZv-bTtcvzwnu-HScq4z77U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83Nzg4/YmV0LmNvbS5ici9s/b2dvLnBuZw" alt="7788bet Casino" class="casino-img">
+                <div class="casino-content">
+                    <h3 class="casino-title">7788bet</h3>
+                    <div class="casino-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-value">9.3/10</div>
+                    </div>
+                    <div class="bonus">Bônus de 100% até R$ 800</div>
+                    <ul class="casino-features">
+                        <li>Rei do cassino móvel</li>
+                        <li>Jackpots progressivos</li>
+                        <li>Jogos originais</li>
+                        <li>Atendimento em português</li>
+                    </ul>
+                    <a href="https://www.7788bet43.com/?id=761951229" class="btn btn-small" target="_blank">Acessar Casino</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <h4>Jogue com Responsabilidade</h4>
+            <p>O jogo deve ser visto como uma forma de entretenimento, não como uma maneira de ganhar dinheiro. Estabeleça limites de tempo e dinheiro para suas sessões de jogo. Não persiga perdas. Se você acha que tem um problema com jogo, procure ajuda em instituições especializadas.</p>
+        </div>
+        
+        <section id="bonus">
+            <h2 class="section-title">Bônus Exclusivos</h2>
+            <p class="section-subtitle">Aproveite estas ofertas especiais disponíveis apenas para novos jogadores do Brasil</p>
+            
+            <div class="casinos-grid">
+                <div class="casino-card">
+                    <div class="bonus" style="background-color: #ff3366; color: white;">BÔNUS ESPECIAL</div>
+                    <img src="https://imgs.search.brave.com/ruPpnVhF2O0VTXQdUvrTkJ2JUbNkI2Zc4LM6eFsOAu8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83NnAu/Y29tLmJyLzc2cC5w/bmc" alt="Bônus de Boas-Vindas" class="casino-img">
+                    <div class="casino-content">
+                        <h3 class="casino-title">76p.com</h3>
+                        <p style="margin-bottom: 15px; font-size: 14px;">Até <strong>R$ 7777</strong> + <strong>20%</strong> no primeiro depósito</p>
+                        <ul class="casino-features">
+                            <li>Válido para novos jogadores</li>
+                            <li>Depósito mínimo de R$ 10</li>
+                            <li>Rollover 30x</li>
+                            <li>Válido por 7 dias</li>
+                        </ul>
+                        <a href="https://76p11.com/?a=24hx55lp" class="btn btn-small" target="_blank">Resgatar Bônus</a>
+                    </div>
+                </div>
+                
+                <div class="casino-card">
+                    <div class="bonus" style="background-color: #4CAF50; color: white;">SEM DEPÓSITO</div>
+                    <img src="https://imgs.search.brave.com/S4alDi9hyJwnl-eVAv_9DHV0pIEhJOsXweSl_XIUxh0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YS01NGJldC5jb20v/aW1nLzEyMi5wbmc" alt="Giros Grátis" class="casino-img">
+                    <div class="casino-content">
+                        <h3 class="casino-title">54bet</h3>
+                        <p style="margin-bottom: 15px; font-size: 14px;"><strong>20 giros grátis</strong> sem necessidade de depósito</p>
+                        <ul class="casino-features">
+                            <li>Disponível para cadastros novos</li>
+                            <li>Sem necessidade de depósito</li>
+                            <li>Ganhos limitados a R$ 100</li>
+                            <li>Válido por 24 horas</li>
+                        </ul>
+                        <a href="https://www.54bet44.com/?id=635574508" class="btn btn-small" target="_blank">Resgatar Bônus</a>
+                    </div>
+                </div>
+                
+                <div class="casino-card">
+                    <div class="bonus" style="background-color: #2196F3; color: white;">CASHBACK</div>
+                    <img src="https://imgs.search.brave.com/q5k0u4rqBvdeiiqu_7yE8Kk4sL0z_FTeqIQltUsAD7U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z28tZ3liZXQuY29t/L2d5YmV0LnBuZw" alt="GYbet" class="casino-img">
+                    <div class="casino-content">
+                        <h3 class="casino-title">GYbet</h3>
+                        <p style="margin-bottom: 15px; font-size: 14px;">Até <strong>15% de cashback</strong> em perdas semanais</p>
+                        <ul class="casino-features">
+                            <li>Para jogadores registrados</li>
+                            <li>Cashback automático</li>
+                            <li>Sem rollover</li>
+                            <li>Disponível toda segunda-feira</li>
+                        </ul>
+                        <a href="#" class="btn btn-small">Resgatar Bônus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">TopCasinos</div>
+                <div class="footer-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Sobre Nós</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Jogo Responsável</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 TopCasinos. Todos os direitos reservados. Este site é apenas informativo e não oferece jogos de azar. Jogue com responsabilidade. O jogo pode ser viciante. Apenas para maiores de 18 anos.
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Ajustar menu em redimensionamento
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.style.display = 'flex';
+                } else {
+                    nav.style.display = 'none';
+                }
+            });
+            
+            // Suavizar rolagem para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Fechar menu mobile após clique
+                        if (window.innerWidth <= 768) {
+                            nav.style.display = 'none';
+                        }
+                    }
+                });
+            });
+            
+            // Sistema de fallback para imagens
+            document.querySelectorAll('.casino-img').forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="180" viewBox="0 0 300 180"><rect width="300" height="180" fill="%232a3f5f"/><text x="150" y="90" text-anchor="middle" fill="%23ffcc00" font-family="Arial" font-size="18" font-weight="bold">' + this.alt + '</text></svg>';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
