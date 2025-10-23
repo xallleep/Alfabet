@@ -135,6 +135,7 @@
             transition: all 0.3s ease;
             font-size: 0.9rem;
             width: 100%;
+            margin-top: 10px;
         }
         
         .casino-link:hover {
@@ -164,6 +165,32 @@
         .warning i {
             color: var(--accent);
             margin-right: 10px;
+        }
+        
+        /* Sistema de avaliação por estrelas */
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        
+        .star {
+            font-size: 1.2rem;
+            color: #444;
+            cursor: pointer;
+            transition: color 0.2s;
+            margin: 0 2px;
+        }
+        
+        .star:hover,
+        .star.active {
+            color: var(--primary);
+        }
+        
+        .rating-value {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 5px;
         }
         
         @media (max-width: 768px) {
@@ -198,200 +225,340 @@
                 <!-- Cassino 1 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 735bet -->
                         <img src="https://imgs.search.brave.com/3BaSLay7vH65AEKqmMtCMlpofYGIDx1nUG_2r4hLb8Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/NzM1YmV0dGFkYS5j/b20vc3RhdGljL3Bp/Y3R1cmUvNzM1YmV0/LnBuZw" alt="735bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">735bet</h3>
+                    <div class="rating" data-casino="735bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://www.735bet7.com/?id=793968517" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 2 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 7788bet -->
                         <img src="https://imgs.search.brave.com/hNrNLMTsMFAz5hIIV4OTTZv-bTtcvzwnu-HScq4z77U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83Nzg4/YmV0LmNvbS5ici9s/b2dvLnBuZw" alt="7788bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">7788bet</h3>
+                    <div class="rating" data-casino="7788bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://www.7788bet43.com/?id=761951229" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 3 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 70bet -->
                         <img src="https://imgs.search.brave.com/spNWMqDQn8dpA7iIMD0tzdCrpUV5XSqkmobBXyX3Ljw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/NzBiZXQtaC5jb20v/c3RhdGljL3BpY3R1/cmUvZ2FtZTEud2Vi/cA" alt="70bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">70bet</h3>
+                    <div class="rating" data-casino="70bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://211.43.149.83:5001/?id=739485706" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 4 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 23bet -->
                         <img src="https://imgs.search.brave.com/waCcMlVGOS06X5na66ohVA8yq2afh5f-LmeVlKV4-9U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8yM2Jl/dGNvbS5jb20vMjNi/ZXQucG5n" alt="23bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">23bet</h3>
+                    <div class="rating" data-casino="23bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://www.23bet43.com/?id=476996147" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 5 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 5588bet -->
                         <img src="https://imgs.search.brave.com/OWNOuWoV_HMehOd95uz54Imd3OmtwmHSdAutgT61ZpM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81NTg4/YmV0ZS5jb20vaW1h/Z2UvNTU4OGJldF9w/OHM0bi5wbmc" alt="5588bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">5588bet</h3>
+                    <div class="rating" data-casino="5588bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://138.113.171.11/?id=796482972" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 6 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 8888k -->
                         <img src="https://imgs.search.brave.com/ujriuH2FvCbHZcDXYlYMBnooJHEW3dhLUtasKnEqPV8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmV0LTg4ODhrLmNv/bS84ODg4ay5wbmc" alt="8888k" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">8888k</h3>
+                    <div class="rating" data-casino="8888k">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://8888g8888.com/?a=n479lhlz" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 7 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 312bet -->
                         <img src="https://imgs.search.brave.com/3CZD0kMVwNwfifiTepE4WxPMvhxTqVP5OxTc6vbQLxw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZWRlbGl2ZXJ5Lm5l/dC9WOEVPTExEbm9q/ZXllXy0yZmxYSTRn/L2IwN2E2MmJlLTYx/MjEtNGU2MS1iY2U2/LWIzOTkxZjk1MTMw/MC9wdWJsaWM" alt="312bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">312bet</h3>
+                    <div class="rating" data-casino="312bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://www.312bet33.com/?id=628721508" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 8 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 992bet -->
                         <img src="https://imgs.search.brave.com/UXoi2_C11OqAEJ8ALtGYaN2KPiPheyQivcwGj5R-8Co/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly85OTJi/ZXRjb20uY29tLmJy/L2ltYWdlcy9sb2dv/Lzk5MmJldC5qcGc" alt="992bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">992bet</h3>
+                    <div class="rating" data-casino="992bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://992bet.org/?id=915079684" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 9 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 54bet -->
                         <img src="https://imgs.search.brave.com/S4alDi9hyJwnl-eVAv_9DHV0pIEhJOsXweSl_XIUxh0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YS01NGJldC5jb20v/aW1nLzEyMi5wbmc" alt="54bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">54bet</h3>
+                    <div class="rating" data-casino="54bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://www.54bet44.com/?id=635574508" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 10 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O KG.bet -->
                         <img src="https://imgs.search.brave.com/hHOpxx0T9y_sPJ9-Aj5ndzDg6oxMIqb9ils0hR9Yln0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rZ2Jl/dDEuY29tL2ltYWdl/cy9zbG90Y29tX2xv/Z28ucG5n" alt="KG.bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">KG.bet</h3>
+                    <div class="rating" data-casino="KG.bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://brakg7.com/?id=740704810" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 11 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O NNbet -->
                         <img src="https://imgs.search.brave.com/ttqwI0rRwlMfDmoG1qGV9xwtxetcvUunknOqXXdFmJg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bm5iZXQtdmlwLmNv/bS9sb2dvLnBuZw" alt="NNbet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">NNbet</h3>
+                    <div class="rating" data-casino="NNbet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://www.nnbet91.com/?dl=90tjam" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 12 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 567win -->
                         <img src="https://imgs.search.brave.com/Gd2Kvccp1G9CIXMHquT95byySTfTuVg2Revaw-jALng/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81Njd3/aW5iZXQuY29tLmJy/LzU2N3dpbi5wbmc" alt="567win" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">567win</h3>
+                    <div class="rating" data-casino="567win">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://d1i4b1tjvlpz4a.cloudfront.net/?dl=5ay002" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 13 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 90win -->
                         <img src="https://imgs.search.brave.com/bfrD7WetLrvN43f31PCbvsztHPlydb-stTzU7gCfa1c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly85MGJl/dC5jb20uY28vaW1h/Z2VzL2xvZ28vOTBi/ZXQuanBn" alt="90win" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">90win</h3>
+                    <div class="rating" data-casino="90win">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://90win66.com/?id=468161866" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 14 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 65x -->
                         <img src="https://imgs.search.brave.com/CM54LcOUcDNZdQr-HlGR2QMnce53blMeaF-BgAsmM20/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yNjV4/LmNvbS9waWN0dXJl/cy9sb2dvLzY1eC5q/cGc" alt="65x" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">65x</h3>
+                    <div class="rating" data-casino="65x">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://65x.biz/?a=aavinyk2" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 15 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O A188 -->
                         <img src="https://imgs.search.brave.com/kMfIcbW9I3dKURQ2eAbpWfkQdSS6MTlMqenDfhah8Ps/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly95b2tl/LnVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wMS9i/NTg5MTRkNjMwOThi/NGFmMWYwYTgwZDEy/ZjkxYjAyYi5qcGc" alt="A188" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">A188</h3>
+                    <div class="rating" data-casino="A188">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://a188.pw/?a=px8c6kyy" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 16 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 89bet -->
                         <img src="https://imgs.search.brave.com/2OHIPt7nZ8xghv-VnTWA5k-9bei7iCM_XjZJG5oNrfk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly84OWJl/dC5tZS9pbWFnZXMv/bG9nby84OWJldC5q/cGc" alt="89bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">89bet</h3>
+                    <div class="rating" data-casino="89bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://89b77.com/?a=x88kv5g3" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 17 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 456bet -->
                         <img src="https://imgs.search.brave.com/hSqF-Bumz82568zEvz4EjwhlwHhCkKeVrFlERNwFbgI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXAt/NDU2YmV0LmNvbS9z/dGF0aWMvcGljdHVy/ZS9iYWNrZ3JvdW5k/LnBuZw" alt="456bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">456bet</h3>
+                    <div class="rating" data-casino="456bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://dd456bet.com/?id=368231799" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 18 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 258bet -->
                         <img src="https://imgs.search.brave.com/jsHPaCdiG_xIHuwtir-zV3jPwzrc7t_Wz2BlYlgeCFE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGctMjU4YmV0LmNv/bS8yNThiZXQucG5n" alt="258bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">258bet</h3>
+                    <div class="rating" data-casino="258bet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://258bet.in/?a=y6zgy9aw" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 19 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O 76p -->
                         <img src="https://imgs.search.brave.com/ruPpnVhF2O0VTXQdUvrTkJ2JUbNkI2Zc4LM6eFsOAu8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83NnAu/Y29tLmJyLzc2cC5w/bmc" alt="76p" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">76p</h3>
+                    <div class="rating" data-casino="76p">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://76p11.com/?a=24hx55lp" class="casino-link" target="_blank">Acessar</a>
                 </div>
                 
                 <!-- Cassino 20 -->
                 <div class="casino-item">
                     <div class="casino-image">
-                        <!-- COLE AQUI O LINK DA IMAGEM PARA O Gybet -->
                         <img src="https://imgs.search.brave.com/q5k0u4rqBvdeiiqu_7yE8Kk4sL0z_FTeqIQltUsAD7U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z28tZ3liZXQuY29t/L2d5YmV0LnBuZw" alt="Gybet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
                     </div>
                     <h3 class="casino-name">Gybet</h3>
+                    <div class="rating" data-casino="Gybet">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-value">Avalie este cassino</div>
                     <a href="https://www.gybet.com/?id=624376797" class="casino-link" target="_blank">Acessar</a>
                 </div>
             </div>
@@ -417,6 +584,51 @@
                     item.style.display = 'none';
                 }
             });
+        });
+
+        // Sistema de avaliação por estrelas
+        document.querySelectorAll('.rating').forEach(rating => {
+            const stars = rating.querySelectorAll('.star');
+            const ratingValue = rating.nextElementSibling;
+            
+            // Inicializa com uma avaliação aleatória para demonstração
+            const randomRating = Math.floor(Math.random() * 5) + 1;
+            updateStars(stars, randomRating);
+            ratingValue.textContent = `${randomRating}/5 estrelas`;
+            
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const value = parseInt(this.getAttribute('data-value'));
+                    updateStars(stars, value);
+                    ratingValue.textContent = `${value}/5 estrelas`;
+                    
+                    // Aqui você poderia salvar a avaliação em um banco de dados
+                    // Por enquanto, apenas mostra um alerta
+                    const casinoName = rating.getAttribute('data-casino');
+                    alert(`Você avaliou o ${casinoName} com ${value} estrelas!`);
+                });
+                
+                star.addEventListener('mouseover', function() {
+                    const value = parseInt(this.getAttribute('data-value'));
+                    updateStars(stars, value, true);
+                });
+                
+                star.addEventListener('mouseout', function() {
+                    const currentRating = parseInt(ratingValue.textContent.split('/')[0]);
+                    updateStars(stars, currentRating);
+                });
+            });
+            
+            function updateStars(stars, value, isHover = false) {
+                stars.forEach(star => {
+                    const starValue = parseInt(star.getAttribute('data-value'));
+                    if (starValue <= value) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
         });
     </script>
 </body>
