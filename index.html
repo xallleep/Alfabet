@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Cassinos</title>
+    <title>Top Cassinos - Os Melhores Cassinos Online</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff3366;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,158 +24,453 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        :root {
-            --primary: #ffd700;
-            --secondary: #ff8c00;
-            --dark: #0d1b2a;
-            --darker: #0a1521;
-            --light: #e0e1dd;
-            --accent: #e63946;
-        }
-        
         body {
-            background: linear-gradient(135deg, var(--darker), var(--dark));
-            color: var(--light);
-            min-height: 100vh;
-            padding: 20px;
+            background-color: #f5f7fa;
+            color: var(--dark);
             line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
         
+        /* Header */
         header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #ffd700;
+        }
+        
+        /* Banner */
+        .banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
             text-align: center;
-            padding: 20px 0;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .search-container {
-            max-width: 500px;
-            margin: 0 auto 30px;
-            position: relative;
-        }
-        
-        .search-box {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 50px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--light);
-            font-size: 1rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding-left: 50px;
-        }
-        
-        .search-box:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px var(--primary);
-        }
-        
-        .search-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary);
-        }
-        
-        .casino-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            padding: 60px 20px;
             margin-bottom: 30px;
         }
         
-        .casino-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 15px;
-            text-align: center;
+        .banner h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
         
-        .casino-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        .banner p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+        
+        /* Filtros */
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px 12px 40px;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+        
+        .category-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: white;
+            border: 1px solid var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background: var(--primary);
+            color: white;
             border-color: var(--primary);
         }
         
+        /* Cassinos */
+        .casinos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .casino-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .casino-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
         .casino-image {
+            height: 160px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .casino-image img {
             width: 100%;
-            height: 120px;
-            border-radius: 10px;
+            height: 100%;
             object-fit: cover;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: transform 0.5s;
         }
         
-        .casino-name {
-            font-size: 1rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .casino-link {
-            display: inline-block;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--dark);
-            padding: 8px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            width: 100%;
-            margin-top: 10px;
-        }
-        
-        .casino-link:hover {
+        .casino-card:hover .casino-image img {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
         }
         
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #b0b0b0;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .casino-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
         
-        .warning {
-            background: rgba(230, 57, 70, 0.1);
-            border: 1px solid rgba(230, 57, 70, 0.3);
-            border-radius: 10px;
+        .casino-info {
             padding: 15px;
-            margin: 20px auto;
-            max-width: 800px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
         
-        .warning i {
-            color: var(--accent);
-            margin-right: 10px;
+        .casino-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+        
+        .casino-rating {
+            color: #ffc107;
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        
+        .casino-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 15px;
+        }
+        
+        .access-casino {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            flex-grow: 1;
+            margin-right: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .access-casino i {
+            margin-right: 5px;
+        }
+        
+        .access-casino:hover {
+            background: var(--secondary);
+        }
+        
+        .view-casino {
+            background: var(--light-gray);
+            color: var(--dark);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        
+        .view-casino:hover {
+            background: #dcdcdc;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #adb5bd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 40px auto;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--gray);
+            cursor: pointer;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.05);
+        }
+        
+        .close-modal:hover {
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .casino-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+        
+        .casino-detail-image {
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .casino-detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .casino-detail-info h2 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .casino-detail-rating {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+        
+        .casino-detail-description {
+            margin: 20px 0;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+        
+        .casino-detail-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-primary i {
+            margin-right: 8px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 1px solid var(--light-gray);
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light-gray);
+        }
+        
+        /* Aviso de Responsabilidade */
+        .responsibility-notice {
+            text-align: center;
+            padding: 10px;
+            background: #fff3cd;
+            color: #856404;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 0.9rem;
         }
         
         /* Sistema de avaliação por estrelas */
@@ -184,451 +490,561 @@
         
         .star:hover,
         .star.active {
-            color: var(--primary);
+            color: #ffc107;
         }
         
         .rating-value {
             font-size: 0.8rem;
             color: #aaa;
             margin-top: 5px;
+            text-align: center;
         }
         
+        /* Responsividade */
         @media (max-width: 768px) {
-            .casino-grid {
+            .casino-detail {
                 grid-template-columns: 1fr;
             }
             
-            h1 {
-                font-size: 2rem;
+            .banner {
+                padding: 40px 20px;
+            }
+            
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            .category-filter {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .casinos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .casino-image {
+                height: 140px;
+            }
+            
+            .casino-info {
+                padding: 12px;
+            }
+            
+            .casino-title {
+                font-size: 0.9rem;
+            }
+            
+            .casino-actions {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .access-casino {
+                margin-right: 0;
+                width: 100%;
+            }
+            
+            .view-casino {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Top Cassinos</h1>
-            
-            <div class="search-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-box" placeholder="Pesquisar cassinos...">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>Top Cassinos</span>
+                </div>
             </div>
-        </header>
-        
-        <div class="warning">
-            <i class="fas fa-exclamation-triangle"></i>
-            <span>Jogue com responsabilidade. Apenas para maiores de 18 anos.</span>
         </div>
-        
-        <main>
-            <div class="casino-grid">
-                <!-- Cassino 1 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/3BaSLay7vH65AEKqmMtCMlpofYGIDx1nUG_2r4hLb8Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/NzM1YmV0dGFkYS5j/b20vc3RhdGljL3Bp/Y3R1cmUvNzM1YmV0/LnBuZw" alt="735bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">735bet</h3>
-                    <div class="rating" data-casino="735bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://www.735bet7.com/?id=793968517" class="casino-link" target="_blank">Acessar</a>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="container">
+            <h1>Os Melhores Cassinos Online</h1>
+            <p>Encontre os cassinos mais confiáveis e com as melhores ofertas para jogar com segurança!</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <!-- Filtros -->
+        <div class="filters">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar cassinos..." id="searchInput">
+            </div>
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="popular">Populares</button>
+                <button class="category-btn" data-category="new">Novos</button>
+            </div>
+        </div>
+
+        <!-- Aviso de Responsabilidade -->
+        <div class="responsibility-notice">
+            <i class="fas fa-exclamation-triangle"></i> Jogue com responsabilidade. Apenas para maiores de 18 anos.
+        </div>
+
+        <!-- Grid de Cassinos -->
+        <div class="casinos-grid" id="casinosGrid">
+            <!-- Cassinos serão inseridos via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nós</h3>
+                    <p>Top Cassinos - oferecemos as melhores recomendações de cassinos online com segurança e confiabilidade.</p>
                 </div>
-                
-                <!-- Cassino 2 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/hNrNLMTsMFAz5hIIV4OTTZv-bTtcvzwnu-HScq4z77U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83Nzg4/YmV0LmNvbS5ici9s/b2dvLnBuZw" alt="7788bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">7788bet</h3>
-                    <div class="rating" data-casino="7788bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://www.7788bet43.com/?id=761951229" class="casino-link" target="_blank">Acessar</a>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="#">Início</a>
+                    <a href="#">Cassinos</a>
+                    <a href="#">Sobre</a>
+                    <a href="#">Contato</a>
                 </div>
-                
-                <!-- Cassino 3 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/spNWMqDQn8dpA7iIMD0tzdCrpUV5XSqkmobBXyX3Ljw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/NzBiZXQtaC5jb20v/c3RhdGljL3BpY3R1/cmUvZ2FtZTEud2Vi/cA" alt="70bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@topcassinos.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
-                    <h3 class="casino-name">70bet</h3>
-                    <div class="rating" data-casino="70bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://211.43.149.83:5001/?id=739485706" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 4 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/waCcMlVGOS06X5na66ohVA8yq2afh5f-LmeVlKV4-9U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8yM2Jl/dGNvbS5jb20vMjNi/ZXQucG5n" alt="23bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">23bet</h3>
-                    <div class="rating" data-casino="23bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://www.23bet43.com/?id=476996147" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 5 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/OWNOuWoV_HMehOd95uz54Imd3OmtwmHSdAutgT61ZpM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81NTg4/YmV0ZS5jb20vaW1h/Z2UvNTU4OGJldF9w/OHM0bi5wbmc" alt="5588bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">5588bet</h3>
-                    <div class="rating" data-casino="5588bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://138.113.171.11/?id=796482972" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 6 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/ujriuH2FvCbHZcDXYlYMBnooJHEW3dhLUtasKnEqPV8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmV0LTg4ODhrLmNv/bS84ODg4ay5wbmc" alt="8888k" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">8888k</h3>
-                    <div class="rating" data-casino="8888k">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://8888g8888.com/?a=n479lhlz" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 7 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/3CZD0kMVwNwfifiTepE4WxPMvhxTqVP5OxTc6vbQLxw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZWRlbGl2ZXJ5Lm5l/dC9WOEVPTExEbm9q/ZXllXy0yZmxYSTRn/L2IwN2E2MmJlLTYx/MjEtNGU2MS1iY2U2/LWIzOTkxZjk1MTMw/MC9wdWJsaWM" alt="312bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">312bet</h3>
-                    <div class="rating" data-casino="312bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://www.312bet33.com/?id=628721508" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 8 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/UXoi2_C11OqAEJ8ALtGYaN2KPiPheyQivcwGj5R-8Co/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly85OTJi/ZXRjb20uY29tLmJy/L2ltYWdlcy9sb2dv/Lzk5MmJldC5qcGc" alt="992bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">992bet</h3>
-                    <div class="rating" data-casino="992bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://992bet.org/?id=915079684" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 9 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/S4alDi9hyJwnl-eVAv_9DHV0pIEhJOsXweSl_XIUxh0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YS01NGJldC5jb20v/aW1nLzEyMi5wbmc" alt="54bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">54bet</h3>
-                    <div class="rating" data-casino="54bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://www.54bet44.com/?id=635574508" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 10 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/hHOpxx0T9y_sPJ9-Aj5ndzDg6oxMIqb9ils0hR9Yln0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rZ2Jl/dDEuY29tL2ltYWdl/cy9zbG90Y29tX2xv/Z28ucG5n" alt="KG.bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">KG.bet</h3>
-                    <div class="rating" data-casino="KG.bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://brakg7.com/?id=740704810" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 11 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/ttqwI0rRwlMfDmoG1qGV9xwtxetcvUunknOqXXdFmJg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bm5iZXQtdmlwLmNv/bS9sb2dvLnBuZw" alt="NNbet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">NNbet</h3>
-                    <div class="rating" data-casino="NNbet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://www.nnbet91.com/?dl=90tjam" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 12 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/Gd2Kvccp1G9CIXMHquT95byySTfTuVg2Revaw-jALng/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81Njd3/aW5iZXQuY29tLmJy/LzU2N3dpbi5wbmc" alt="567win" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">567win</h3>
-                    <div class="rating" data-casino="567win">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://d1i4b1tjvlpz4a.cloudfront.net/?dl=5ay002" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 13 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/bfrD7WetLrvN43f31PCbvsztHPlydb-stTzU7gCfa1c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly85MGJl/dC5jb20uY28vaW1h/Z2VzL2xvZ28vOTBi/ZXQuanBn" alt="90win" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">90win</h3>
-                    <div class="rating" data-casino="90win">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://90win66.com/?id=468161866" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 14 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/CM54LcOUcDNZdQr-HlGR2QMnce53blMeaF-BgAsmM20/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yNjV4/LmNvbS9waWN0dXJl/cy9sb2dvLzY1eC5q/cGc" alt="65x" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">65x</h3>
-                    <div class="rating" data-casino="65x">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://65x.biz/?a=aavinyk2" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 15 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/kMfIcbW9I3dKURQ2eAbpWfkQdSS6MTlMqenDfhah8Ps/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly95b2tl/LnVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wMS9i/NTg5MTRkNjMwOThi/NGFmMWYwYTgwZDEy/ZjkxYjAyYi5qcGc" alt="A188" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">A188</h3>
-                    <div class="rating" data-casino="A188">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://a188.pw/?a=px8c6kyy" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 16 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/2OHIPt7nZ8xghv-VnTWA5k-9bei7iCM_XjZJG5oNrfk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly84OWJl/dC5tZS9pbWFnZXMv/bG9nby84OWJldC5q/cGc" alt="89bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">89bet</h3>
-                    <div class="rating" data-casino="89bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://89b77.com/?a=x88kv5g3" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 17 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/hSqF-Bumz82568zEvz4EjwhlwHhCkKeVrFlERNwFbgI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXAt/NDU2YmV0LmNvbS9z/dGF0aWMvcGljdHVy/ZS9iYWNrZ3JvdW5k/LnBuZw" alt="456bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">456bet</h3>
-                    <div class="rating" data-casino="456bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://dd456bet.com/?id=368231799" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 18 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/jsHPaCdiG_xIHuwtir-zV3jPwzrc7t_Wz2BlYlgeCFE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGctMjU4YmV0LmNv/bS8yNThiZXQucG5n" alt="258bet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">258bet</h3>
-                    <div class="rating" data-casino="258bet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://258bet.in/?a=y6zgy9aw" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 19 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/ruPpnVhF2O0VTXQdUvrTkJ2JUbNkI2Zc4LM6eFsOAu8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83NnAu/Y29tLmJyLzc2cC5w/bmc" alt="76p" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">76p</h3>
-                    <div class="rating" data-casino="76p">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://76p11.com/?a=24hx55lp" class="casino-link" target="_blank">Acessar</a>
-                </div>
-                
-                <!-- Cassino 20 -->
-                <div class="casino-item">
-                    <div class="casino-image">
-                        <img src="https://imgs.search.brave.com/q5k0u4rqBvdeiiqu_7yE8Kk4sL0z_FTeqIQltUsAD7U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z28tZ3liZXQuY29t/L2d5YmV0LnBuZw" alt="Gybet" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
-                    </div>
-                    <h3 class="casino-name">Gybet</h3>
-                    <div class="rating" data-casino="Gybet">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <div class="rating-value">Avalie este cassino</div>
-                    <a href="https://www.gybet.com/?id=624376797" class="casino-link" target="_blank">Acessar</a>
                 </div>
             </div>
-        </main>
-        
-        <footer>
-            <p>Jogue com responsabilidade. Apenas para maiores de 18 anos.</p>
-            <p>© 2023 Top Cassinos. Todos os direitos reservados.</p>
-        </footer>
+            <div class="copyright">
+                &copy; 2023 Top Cassinos - Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalhes do Cassino -->
+    <div class="modal" id="casinoModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="casino-detail" id="casinoDetail">
+                <!-- Conteúdo do modal será preenchido via JavaScript -->
+            </div>
+        </div>
     </div>
 
     <script>
-        // Funcionalidade de busca
-        document.querySelector('.search-box').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const items = document.querySelectorAll('.casino-item');
+        // Dados dos cassinos
+        const casinos = [
+            {
+                id: 1,
+                name: "735bet",
+                image: "https://imgs.search.brave.com/3BaSLay7vH65AEKqmMtCMlpofYGIDx1nUG_2r4hLb8Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/NzM1YmV0dGFkYS5j/b20vc3RhdGljL3Bp/Y3R1cmUvNzM1YmV0/LnBuZw",
+                rating: 4.5,
+                category: "popular",
+                description: "735bet é um dos cassinos online mais populares, oferecendo uma ampla variedade de jogos, bônus generosos e uma experiência de usuário excepcional.",
+                affiliateLink: "https://www.735bet7.com/?id=793968517"
+            },
+            {
+                id: 2,
+                name: "7788bet",
+                image: "https://imgs.search.brave.com/hNrNLMTsMFAz5hIIV4OTTZv-bTtcvzwnu-HScq4z77U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83Nzg4/YmV0LmNvbS5ici9s/b2dvLnBuZw",
+                rating: 4.3,
+                category: "popular",
+                description: "7788bet oferece uma plataforma completa de cassino com jogos de slots, mesa, ao vivo e muito mais. Conhecido por seus pagamentos rápidos.",
+                affiliateLink: "https://www.7788bet43.com/?id=761951229"
+            },
+            {
+                id: 3,
+                name: "70bet",
+                image: "https://imgs.search.brave.com/spNWMqDQn8dpA7iIMD0tzdCrpUV5XSqkmobBXyX3Ljw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/NzBiZXQtaC5jb20v/c3RhdGljL3BpY3R1/cmUvZ2FtZTEud2Vi/cA",
+                rating: 4.2,
+                category: "new",
+                description: "70bet é um cassino moderno com interface intuitiva e uma grande seleção de jogos. Oferece bônus de boas-vindas atrativos para novos jogadores.",
+                affiliateLink: "https://211.43.149.83:5001/?id=739485706"
+            },
+            {
+                id: 4,
+                name: "23bet",
+                image: "https://imgs.search.brave.com/waCcMlVGOS06X5na66ohVA8yq2afh5f-LmeVlKV4-9U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8yM2Jl/dGNvbS5jb20vMjNi/ZXQucG5n",
+                rating: 4.0,
+                category: "popular",
+                description: "23bet é um cassino confiável com anos de experiência no mercado. Oferece uma ampla gama de jogos e métodos de pagamento seguros.",
+                affiliateLink: "https://www.23bet43.com/?id=476996147"
+            },
+            {
+                id: 5,
+                name: "5588bet",
+                image: "https://imgs.search.brave.com/OWNOuWoV_HMehOd95uz54Imd3OmtwmHSdAutgT61ZpM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81NTg4/YmV0ZS5jb20vaW1h/Z2UvNTU4OGJldF9w/OHM0bi5wbmc",
+                rating: 4.4,
+                category: "popular",
+                description: "5588bet se destaca por seu atendimento ao cliente excepcional e promoções regulares. Uma ótima opção para jogadores de todos os níveis.",
+                affiliateLink: "https://138.113.171.11/?id=796482972"
+            },
+            {
+                id: 6,
+                name: "8888k",
+                image: "https://imgs.search.brave.com/ujriuH2FvCbHZcDXYlYMBnooJHEW3dhLUtasKnEqPV8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmV0LTg4ODhrLmNv/bS84ODg4ay5wbmc",
+                rating: 4.6,
+                category: "new",
+                description: "8888k é conhecido por seus jackpots progressivos e torneios emocionantes. Oferece uma experiência de jogo premium com gráficos de alta qualidade.",
+                affiliateLink: "https://8888g8888.com/?a=n479lhlz"
+            },
+            {
+                id: 7,
+                name: "312bet",
+                image: "https://imgs.search.brave.com/3CZD0kMVwNwfifiTepE4WxPMvhxTqVP5OxTc6vbQLxw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZWRlbGl2ZXJ5Lm5l/dC9WOEVPTExEbm9q/ZXllXy0yZmxYSTRn/L2IwN2E2MmJlLTYx/MjEtNGU2MS1iY2U2/LWIzOTkxZjk1MTMw/MC9wdWJsaWM",
+                rating: 4.1,
+                category: "popular",
+                description: "312bet oferece uma plataforma segura e confiável para jogadores brasileiros. Com suporte em português e métodos de pagamento locais.",
+                affiliateLink: "https://www.312bet33.com/?id=628721508"
+            },
+            {
+                id: 8,
+                name: "992bet",
+                image: "https://imgs.search.brave.com/UXoi2_C11OqAEJ8ALtGYaN2KPiPheyQivcwGj5R-8Co/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly85OTJi/ZXRjb20uY29tLmJy/L2ltYWdlcy9sb2dv/Lzk5MmJldC5qcGc",
+                rating: 4.3,
+                category: "new",
+                description: "992bet é um cassino moderno com foco em jogos ao vivo. Oferece uma experiência imersiva com dealers reais e transmissão em alta definição.",
+                affiliateLink: "https://992bet.org/?id=915079684"
+            },
+            {
+                id: 9,
+                name: "54bet",
+                image: "https://imgs.search.brave.com/S4alDi9hyJwnl-eVAv_9DHV0pIEhJOsXweSl_XIUxh0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YS01NGJldC5jb20v/aW1nLzEyMi5wbmc",
+                rating: 4.0,
+                category: "popular",
+                description: "54bet combina tradição e inovação, oferecendo tanto jogos clássicos quanto as mais recentes novidades do mundo dos cassinos online.",
+                affiliateLink: "https://www.54bet44.com/?id=635574508"
+            },
+            {
+                id: 10,
+                name: "KG.bet",
+                image: "https://imgs.search.brave.com/hHOpxx0T9y_sPJ9-Aj5ndzDg6oxMIqb9ils0hR9Yln0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rZ2Jl/dDEuY29tL2ltYWdl/cy9zbG90Y29tX2xv/Z28ucG5n",
+                rating: 4.5,
+                category: "new",
+                description: "KG.bet se destaca por seu programa de fidelidade generoso e torneios semanais com prêmios em dinheiro. Uma ótima escolha para jogadores frequentes.",
+                affiliateLink: "https://brakg7.com/?id=740704810"
+            },
+            {
+                id: 11,
+                name: "NNbet",
+                image: "https://imgs.search.brave.com/ttqwI0rRwlMfDmoG1qGV9xwtxetcvUunknOqXXdFmJg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bm5iZXQtdmlwLmNv/bS9sb2dvLnBuZw",
+                rating: 4.2,
+                category: "popular",
+                description: "NNbet oferece uma experiência de jogo segura e divertida, com uma ampla seleção de slots, jogos de mesa e apostas esportivas.",
+                affiliateLink: "https://www.nnbet91.com/?dl=90tjam"
+            },
+            {
+                id: 12,
+                name: "567win",
+                image: "https://imgs.search.brave.com/Gd2Kvccp1G9CIXMHquT95byySTfTuVg2Revaw-jALng/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81Njd3/aW5iZXQuY29tLmJy/LzU2N3dpbi5wbmc",
+                rating: 4.4,
+                category: "new",
+                description: "567win é conhecido por seus bônus de depósito generosos e programa de recompensas. Uma plataforma confiável com anos de experiência.",
+                affiliateLink: "https://d1i4b1tjvlpz4a.cloudfront.net/?dl=5ay002"
+            },
+            {
+                id: 13,
+                name: "90win",
+                image: "https://imgs.search.brave.com/bfrD7WetLrvN43f31PCbvsztHPlydb-stTzU7gCfa1c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly85MGJl/dC5jb20uY28vaW1h/Z2VzL2xvZ28vOTBi/ZXQuanBn",
+                rating: 4.1,
+                category: "popular",
+                description: "90win oferece uma interface intuitiva e uma grande variedade de jogos. Conhecido por seus torneios emocionantes e prêmios generosos.",
+                affiliateLink: "https://90win66.com/?id=468161866"
+            },
+            {
+                id: 14,
+                name: "65x",
+                image: "https://imgs.search.brave.com/CM54LcOUcDNZdQr-HlGR2QMnce53blMeaF-BgAsmM20/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yNjV4/LmNvbS9waWN0dXJl/cy9sb2dvLzY1eC5q/cGc",
+                rating: 4.3,
+                category: "new",
+                description: "65x é um cassino moderno com foco em tecnologia e inovação. Oferece uma experiência de jogo fluida em dispositivos móveis e desktop.",
+                affiliateLink: "https://65x.biz/?a=aavinyk2"
+            },
+            {
+                id: 15,
+                name: "A188",
+                image: "https://imgs.search.brave.com/kMfIcbW9I3dKURQ2eAbpWfkQdSS6MTlMqenDfhah8Ps/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly95b2tl/LnVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wMS9i/NTg5MTRkNjMwOThi/NGFmMWYwYTgwZDEy/ZjkxYjAyYi5qcGc",
+                rating: 4.5,
+                category: "popular",
+                description: "A188 é um dos cassinos mais estabelecidos do mercado, conhecido por sua confiabilidade e ampla gama de opções de jogos e apostas.",
+                affiliateLink: "https://a188.pw/?a=px8c6kyy"
+            },
+            {
+                id: 16,
+                name: "89bet",
+                image: "https://imgs.search.brave.com/2OHIPt7nZ8xghv-VnTWA5k-9bei7iCM_XjZJG5oNrfk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly84OWJl/dC5tZS9pbWFnZXMv/bG9nby84OWJldC5q/cGc",
+                rating: 4.0,
+                category: "new",
+                description: "89bet oferece uma plataforma moderna com jogos exclusivos e bônus atrativos. Focado na experiência do jogador brasileiro.",
+                affiliateLink: "https://89b77.com/?a=x88kv5g3"
+            },
+            {
+                id: 17,
+                name: "456bet",
+                image: "https://imgs.search.brave.com/hSqF-Bumz82568zEvz4EjwhlwHhCkKeVrFlERNwFbgI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXAt/NDU2YmV0LmNvbS9z/dGF0aWMvcGljdHVy/ZS9iYWNrZ3JvdW5k/LnBuZw",
+                rating: 4.2,
+                category: "popular",
+                description: "456bet é conhecido por seus pagamentos rápidos e suporte ao cliente eficiente. Uma escolha segura para jogadores de todos os níveis.",
+                affiliateLink: "https://dd456bet.com/?id=368231799"
+            },
+            {
+                id: 18,
+                name: "258bet",
+                image: "https://imgs.search.brave.com/jsHPaCdiG_xIHuwtir-zV3jPwzrc7t_Wz2BlYlgeCFE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGctMjU4YmV0LmNv/bS8yNThiZXQucG5n",
+                rating: 4.1,
+                category: "new",
+                description: "258bet oferece uma experiência de jogo completa com foco em segurança e fair play. Com licenças internacionais e auditorias regulares.",
+                affiliateLink: "https://258bet.in/?a=y6zgy9aw"
+            },
+            {
+                id: 19,
+                name: "76p",
+                image: "https://imgs.search.brave.com/ruPpnVhF2O0VTXQdUvrTkJ2JUbNkI2Zc4LM6eFsOAu8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83NnAu/Y29tLmJyLzc2cC5w/bmc",
+                rating: 4.4,
+                category: "popular",
+                description: "76p combina tradição e inovação, oferecendo tanto jogos clássicos quanto as mais recentes novidades do mundo dos cassinos online.",
+                affiliateLink: "https://76p11.com/?a=24hx55lp"
+            },
+            {
+                id: 20,
+                name: "Gybet",
+                image: "https://imgs.search.brave.com/q5k0u4rqBvdeiiqu_7yE8Kk4sL0z_FTeqIQltUsAD7U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z28tZ3liZXQuY29t/L2d5YmV0LnBuZw",
+                rating: 4.3,
+                category: "new",
+                description: "Gybet se destaca por seu design moderno e experiência de usuário intuitiva. Oferece uma ampla gama de jogos e métodos de pagamento.",
+                affiliateLink: "https://www.gybet.com/?id=624376797"
+            }
+        ];
+
+        // Função para renderizar os cassinos
+        function renderCasinos(casinosToRender = casinos) {
+            const casinosGrid = document.getElementById('casinosGrid');
+            casinosGrid.innerHTML = '';
             
-            items.forEach(item => {
-                const casinoName = item.querySelector('.casino-name').textContent.toLowerCase();
-                if (casinoName.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
+            casinosToRender.forEach(casino => {
+                const casinoCard = document.createElement('div');
+                casinoCard.className = 'casino-card';
+                casinoCard.innerHTML = `
+                    <div class="casino-image" onclick="openAffiliateLink('${casino.affiliateLink}')">
+                        <img src="${casino.image}" alt="${casino.name}">
+                        <div class="casino-badge">${casino.rating}/5</div>
+                    </div>
+                    <div class="casino-info">
+                        <h3 class="casino-title">${casino.name}</h3>
+                        <div class="casino-rating">
+                            ${getRatingStars(casino.rating)}
+                        </div>
+                        <div class="rating" data-casino="${casino.name}">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <div class="rating-value">Avalie este cassino</div>
+                        <div class="casino-actions">
+                            <a href="${casino.affiliateLink}" target="_blank" class="access-casino" onclick="trackClick(${casino.id})">
+                                <i class="fas fa-play"></i> Acessar
+                            </a>
+                            <a class="view-casino" onclick="showCasinoDetail(${casino.id})">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                casinosGrid.appendChild(casinoCard);
             });
-        });
+            
+            // Inicializar sistema de avaliação
+            initializeRatingSystem();
+        }
+
+        // Função para gerar estrelas de avaliação
+        function getRatingStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="far fa-star"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Função para mostrar detalhes do cassino
+        function showCasinoDetail(casinoId) {
+            const casino = casinos.find(c => c.id === casinoId);
+            if (!casino) return;
+            
+            const casinoDetail = document.getElementById('casinoDetail');
+            casinoDetail.innerHTML = `
+                <div class="casino-detail-image" onclick="openAffiliateLink('${casino.affiliateLink}')">
+                    <img src="${casino.image}" alt="${casino.name}">
+                </div>
+                <div class="casino-detail-info">
+                    <h2>${casino.name}</h2>
+                    <div class="casino-detail-rating">
+                        ${getRatingStars(casino.rating)} <span>(${casino.rating}/5)</span>
+                    </div>
+                    <p class="casino-detail-description">${casino.description}</p>
+                    <div class="responsibility-notice">
+                        <i class="fas fa-exclamation-triangle"></i> Jogue com responsabilidade. Apenas para maiores de 18 anos.
+                    </div>
+                    <div class="casino-detail-actions">
+                        <a href="${casino.affiliateLink}" target="_blank" class="btn-primary" onclick="trackClick(${casino.id})">
+                            <i class="fas fa-play"></i> Acessar Cassino
+                        </a>
+                        <button class="btn-secondary" onclick="closeModal()">
+                            <i class="fas fa-times"></i> Fechar
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('casinoModal').style.display = 'block';
+        }
+
+        // Função para abrir link de afiliado
+        function openAffiliateLink(link) {
+            window.open(link, '_blank');
+        }
+
+        // Função para rastrear cliques (para analytics futuro)
+        function trackClick(casinoId) {
+            console.log(`Cassino ${casinoId} clicado - Link de afiliado acessado`);
+            // Aqui você pode adicionar código para rastrear cliques no Google Analytics
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById('casinoModal').style.display = 'none';
+        }
 
         // Sistema de avaliação por estrelas
-        document.querySelectorAll('.rating').forEach(rating => {
-            const stars = rating.querySelectorAll('.star');
-            const ratingValue = rating.nextElementSibling;
-            
-            // Inicializa com uma avaliação aleatória para demonstração
-            const randomRating = Math.floor(Math.random() * 5) + 1;
-            updateStars(stars, randomRating);
-            ratingValue.textContent = `${randomRating}/5 estrelas`;
-            
-            stars.forEach(star => {
-                star.addEventListener('click', function() {
-                    const value = parseInt(this.getAttribute('data-value'));
-                    updateStars(stars, value);
-                    ratingValue.textContent = `${value}/5 estrelas`;
+        function initializeRatingSystem() {
+            document.querySelectorAll('.rating').forEach(rating => {
+                const stars = rating.querySelectorAll('.star');
+                const ratingValue = rating.nextElementSibling;
+                
+                // Inicializa com uma avaliação aleatória para demonstração
+                const randomRating = Math.floor(Math.random() * 5) + 1;
+                updateStars(stars, randomRating);
+                ratingValue.textContent = `${randomRating}/5 estrelas`;
+                
+                stars.forEach(star => {
+                    star.addEventListener('click', function() {
+                        const value = parseInt(this.getAttribute('data-value'));
+                        updateStars(stars, value);
+                        ratingValue.textContent = `${value}/5 estrelas`;
+                        
+                        // Aqui você poderia salvar a avaliação em um banco de dados
+                        // Por enquanto, apenas mostra um alerta
+                        const casinoName = rating.getAttribute('data-casino');
+                        alert(`Você avaliou o ${casinoName} com ${value} estrelas!`);
+                    });
                     
-                    // Aqui você poderia salvar a avaliação em um banco de dados
-                    // Por enquanto, apenas mostra um alerta
-                    const casinoName = rating.getAttribute('data-casino');
-                    alert(`Você avaliou o ${casinoName} com ${value} estrelas!`);
+                    star.addEventListener('mouseover', function() {
+                        const value = parseInt(this.getAttribute('data-value'));
+                        updateStars(stars, value, true);
+                    });
+                    
+                    star.addEventListener('mouseout', function() {
+                        const currentRating = parseInt(ratingValue.textContent.split('/')[0]);
+                        updateStars(stars, currentRating);
+                    });
                 });
                 
-                star.addEventListener('mouseover', function() {
-                    const value = parseInt(this.getAttribute('data-value'));
-                    updateStars(stars, value, true);
-                });
-                
-                star.addEventListener('mouseout', function() {
-                    const currentRating = parseInt(ratingValue.textContent.split('/')[0]);
-                    updateStars(stars, currentRating);
+                function updateStars(stars, value, isHover = false) {
+                    stars.forEach(star => {
+                        const starValue = parseInt(star.getAttribute('data-value'));
+                        if (starValue <= value) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Fechar o modal ao clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('casinoModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Fechar o modal com a tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Inicializar o site
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCasinos();
+            
+            // Adicionar evento de fechar modal
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+            
+            // Filtros de categoria
+            document.querySelectorAll('.category-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.category-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    if (category === 'all') {
+                        renderCasinos();
+                    } else {
+                        const filteredCasinos = casinos.filter(casino => casino.category === category);
+                        renderCasinos(filteredCasinos);
+                    }
                 });
             });
             
-            function updateStars(stars, value, isHover = false) {
-                stars.forEach(star => {
-                    const starValue = parseInt(star.getAttribute('data-value'));
-                    if (starValue <= value) {
-                        star.classList.add('active');
-                    } else {
-                        star.classList.remove('active');
-                    }
-                });
-            }
+            // Busca de cassinos
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredCasinos = casinos.filter(casino => 
+                    casino.name.toLowerCase().includes(searchTerm) || 
+                    casino.description.toLowerCase().includes(searchTerm)
+                );
+                renderCasinos(filteredCasinos);
+            });
         });
     </script>
 </body>
